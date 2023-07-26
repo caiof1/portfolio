@@ -1,0 +1,105 @@
+
+
+.header {
+    width: 100%;
+    height: 15vh;
+    padding: 0 10px;
+}
+
+.header > div {
+    display: flex;
+    height: inherit;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo span {
+    color: #7477FF;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.header .menu {
+    display: flex;
+}
+
+.header .menu li {
+    margin: 0 8px;
+    position: relative;
+}
+
+.header .menu_bar {
+    width: 100%;
+    max-width: 25px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.header .menu_bar:hover div {
+    background: #7477FF;
+    transition: .2s linear;
+}
+
+.header .menu_bar div {
+    width: 100%;
+    height: 2px;
+    background: #fff
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inspiration&display=swap");
+
+svg {
+	font-family: "Inspiration", sans-serif;
+	width: 100px; height: 100%;
+}
+svg text {
+	animation: stroke 3s infinite alternate;
+	stroke-width: 2;
+	stroke: #7477FF;
+	font-size: 22px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(116,119,255,0); stroke: rgba(116,119,255,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(116,119,255,0); stroke: rgba(116,119,255,1); }
+	80%  {fill: rgba(116,119,255,0); stroke: rgba(116,119,255,1); stroke-width: 3; }
+	100% {
+		fill: rgba(116,119,255,1); stroke: rgba(116,119,255,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+@media screen and (max-width: 700px) {
+    .header .menu_bar {
+        display: flex;
+    }
+
+    .header .menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        height: 100vh;
+        width: 50%;
+        text-align: center;
+        padding-top: 15vh;
+        background: #1E293B;
+        transform: translateX(100%);
+        transition: transform .3s linear;
+    }
+
+    .header .active_menu {
+        transform: translateX(0);
+    }
+
+    .header .menu li {
+        margin: 10px 0;
+    }
+}
